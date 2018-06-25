@@ -3,6 +3,30 @@
 	padding: 0;
 }
 
+html, body {
+	overflow: hidden;
+	width: 120px;
+	height: 120px;
+}
+
+.browsers-wrapper {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
 img {
 	width: 25px;
+}
+
+a {
+	cursor: pointer;
+	margin: 2px;
+}
+
+a:hover {
+	-webkit-filter: drop-shadow(0 0 10px gray);
+	filter: drop-shadow(0 0 10px gray);
 }
