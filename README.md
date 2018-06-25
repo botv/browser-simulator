@@ -1,2 +1,2 @@
-# browsersimulator.com
+# Browser Simulator
 🌎 A wacky browser simulator
