@@ -1,20 +1,33 @@
 {
-  "name": "Browser Simulator",
-  "description": "View webpages through the eyes of the less fortunate",
   "manifest_version": 2,
-  "version": "1.0",
-  "permissions": [
-    "activeTab"
-  ],
-  "browser_action": {
-      "default_title": "Simulate",
-      "default_icon": "assets/icons/icon.png",
-      "default_popup": "popup.html"
-  },
+  "name": "Browser Simulator",
+  "version": "2.1.7",
+  "description": "View the web through the eyes of the less fortunate.",
+
   "icons": {
     "16": "assets/icons/icon16.png",
     "19": "assets/icons/icon19.png",
     "48": "assets/icons/icon48.png",
     "128": "assets/icons/icon128.png"
-  }
+  },
+
+  "browser_action": {
+    "default_icon": "assets/chrome.png",
+    "default_title": "Switch simulator"
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["lib/jquery.min.js", "simulate.js"],
+    "run_at": "document_end"
+  }],
+
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
 }
