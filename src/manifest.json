@@ -1,0 +1,20 @@
+{
+  "name": "Browser Simulator",
+  "description": "View webpages through the eyes of the less fortunate",
+  "manifest_version": 2,
+  "version": "1.0",
+  "permissions": [
+    "activeTab"
+  ],
+  "browser_action": {
+      "default_title": "Simulate",
+      "default_icon": "assets/icons/icon.png",
+      "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "19": "assets/icons/icon19.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  }
+}
