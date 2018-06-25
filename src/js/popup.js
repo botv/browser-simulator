@@ -1,23 +1,23 @@
+function simulate(browser) {
+	chrome.tabs.executeScript(null, { file: "js/jquery.min.js" }, function() {
+		chrome.tabs.executeScript(null, { file: "js/collective.js" }, function() {
+			chrome.tabs.executeScript(null, { file: `js/browsers/${browser}.js` });
+		});
+	});
+	console.log('hello')
+}
+
 $(document).ready(function () {
 	$('#safari').on('click', function () {
-		chrome.tabs.executeScript(null, { file: "js/jquery.min.js" }, function() {
-			chrome.tabs.executeScript(null, { file: "js/browsers/safari.js" });
-		});
+		simulate('safari')
 	});
 	$('#opera').on('click', function () {
-		chrome.tabs.executeScript(null, { file: "js/jquery.min.js" }, function() {
-			chrome.tabs.executeScript(null, { file: "js/browsers/opera.js" });
-		});
+		simulate('opera')
 	});
 	$('#firefox').on('click', function () {
-		chrome.tabs.executeScript(null, { file: "js/jquery.min.js" }, function() {
-			chrome.tabs.executeScript(null, { file: "js/browsers/firefox.js" });
-		});
+		simulate('firefox')
 	});
 	$('#internet-explorer').on('click', function () {
-		chrome.tabs.executeScript(null, { file: "js/jquery.min.js" }, function() {
-			chrome.tabs.executeScript(null, { file: "js/browsers/internet-explorer.js" });
-		});
+		simulate('internet-explorer')
 	});
-
 });

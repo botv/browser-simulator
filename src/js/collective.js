@@ -3,7 +3,7 @@ function removeStyle() {
 	$(document).find('link[rel=stylesheet]').remove();
 }
 
-function allLinksTo(href) {
+function sendAllTo(href) {
 	// send all links and buttons to href
 	$(document).find('a').attr('href', href);
 	$(document).find('button').attr('onclick', `location.href=${href}`);
