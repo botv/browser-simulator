@@ -32,7 +32,6 @@ function getChildren(area) {
 		complete.push(c[i]);
 		complete = complete.concat(getChildren(c[i]));
 	}
-
 	return complete;
 }
 
@@ -51,7 +50,7 @@ function mode(strings) {
 		}
 	}
 
-	if (max != null){
+	if (max != null) {
 		return max;
 	} else {
 		return null;
@@ -63,7 +62,7 @@ function getModeClass() {
 	let arr = [];
 	for (var i = 0; i < all.length; i++) {
 		if (all[i].className.length > 0) {
-			arr = arr.concat(all[i].className.split(" "));
+			arr = arr.concat(all[i].className.split(' '));
 		}
 	}
 	return mode(arr);
@@ -74,7 +73,7 @@ function randomClass() {
 	let arr = [];
 	for (var i = 0; i < all.length; i++) {
 		if (all[i].className.length > 0) {
-			arr = arr.concat(all[i].className.split(" "));
+			arr = arr.concat(all[i].className.split(' '));
 		}
 	}
 	return arr[Math.floor(Math.random() * arr.length)];
@@ -82,12 +81,12 @@ function randomClass() {
 
 function allImagesTo(src) {
 	if (src === 'download') {
-		$('img').each(function() {
-			$(this).attr('src',randomDownloadButton());
+		$('img').each(function () {
+			$(this).attr('src', randomDownloadButton());
 		});
 	} else {
-		$('img').each(function() {
-			$(this).attr('src',src);
+		$('img').each(function () {
+			$(this).attr('src', src);
 		});
 	}
 }
@@ -114,61 +113,56 @@ function randomAdvertisement() {
 	return arr[Math.floor(Math.random() * arr.length)];
 }
 
-function blockingPopup () {
+function blockingPopup() {
 	$('body').css('overflow', 'hidden');
 
-	var popupHolder = document.createElement("div");
-	popupHolder.style = "text-align:center;background-color:rgba(0, 0, 0, 0.5);position:fixed;top:0;left:0;z-index:9999;width:100%;height:100%";
-
-	var popup = document.createElement("img");
-	popup.src = "https://s11986.pcdn.co/wp-content/uploads/2007/11/ie-encountered-problem.jpg";
-	popup.style = "display:inline-block;margin-top:20px;width:80%";
-
-	var close = document.createElement("button");
-	close.onclick = function () {
-		$('body').css('overflow', 'scroll');
-		document.body.removeChild(popupHolder);
-		let timeout = (Math.random() * 20 + 20) * 1000;
-		setTimeout(blockingPopup, timeout);
-	};
-	close.innerHTML = "Close";
-	close.style = "position:absolute;top:0;left:0;";
-
-	popupHolder.appendChild(popup);
-	popupHolder.appendChild(close);
-	document.body.appendChild(popupHolder);
+	var popupHolder = $('<div></div>')
+		.attr('style', 'text-align:center;background-color:rgba(0, 0, 0, 0.5);position:fixed;top:0;left:0;z-index:9999;width:100%;height:100%');
+	var popup = $('<img></img>')
+		.attr('src', 'https://s11986.pcdn.co/wp-content/uploads/2007/11/ie-encountered-problem.jpg')
+		.attr('style', 'display:inline-block;margin-top:20px;width:80%')
+	var close = $('<button></button>')
+		.click(function () {
+			$('body').css('overflow', 'scroll');
+			document.body.removeChild(popupHolder);
+			let timeout = (Math.random() * 20 + 20) * 1000;
+			setTimeout(blockingPopup, timeout);
+		})
+		.html('Close')
+		.style('position:absolute;top:0;left:0;')
+	popupHolder.append(popup);
+	popupHolder.append(close);
+	$('body').append(popupHolder);
 }
 
-function nonBlockingPopup () {
-	var popup = document.createElement("img");
-	popup.src = randomAdvertisement();
+function nonBlockingPopup() {
+	var popup = $('<img></img>')
+		.attr('src', randomAdvertisement())
 	let body = $('body');
 	let l = Math.random() * body.width();
-	let t = Math.random() * body.width();
-	console.log(l, t);
-	popup.style = "width:40%;position:absolute;top:"+t+"px;left:"+l+"px;z-index:9999";
-
-	document.body.appendChild(popup);
+	let t = Math.random() * body.height();
+	popup.attr('style', 'width:40%;position:absolute;top:' + t + 'px;left:' + l + 'px;z-index:9999');
+	body.append(popup);
 
 	let timeout = (Math.random() * 20 + 10) * 1000;
 	setTimeout(nonBlockingPopup, timeout);
 }
 
-function updateMessage () {
+function updateMessage() {
 	setTimeout(function () {
 		let digits = [];
 		for (var i = 0; i < 3; i++) {
 			digits.push(Math.floor(Math.random() * 90 + 10));
 		}
-		let msg = "This version is out of date!\n\n Restard your computer to update to Opera "+digits[0]+"."+digits[1]+"."+digits[2]+"\nThakn u";
+		let msg = 'This version is out of date!\n\n Restard your computer to update to Opera ' + digits[0] + '.' + digits[1] + '.' + digits[2] + '\nThakn u';
 		alert(msg);
 		updateMessage();
 	}, (Math.floor(Math.random() * 20 + 10) * 1000));
 }
 
 function swapCss (class1, class2) {
-	let all1 = $("."+class1);
-	let all2 = $("."+class2);
+	let all1 = $('.'+class1);
+	let all2 = $('.'+class2);
 
 	var i;
 
@@ -200,19 +194,13 @@ function swapClasses(num) {
 	}
 }
 
-function viewSource() {
-	let html = $('body').html()
-	let fakeConsole = document.createElement("div");
-	fakeConsole.style = "background-color:black;color:green";
-}
-
 
 chrome.storage.local.get('browser', function (result) {
 	let browser = result.browser;
 	if (browser === 'safari') {
-		removeStyle("."+getModeClass());
+		removeStyle('.'+getModeClass());
 		for (var i = 0; i < 3; i++) {
-			removeStyle("." + randomClass());
+			removeStyle('.' + randomClass());
 		}
 		nonBlockingPopup();
 	} else if (browser === 'opera') {
