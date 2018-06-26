@@ -201,12 +201,9 @@ function swapClasses(num) {
 }
 
 function viewSource() {
-	$.ajax({
-		url: 'view-source:' + location.href,
-		success: function(data) {
-			alert(data);
-		}
-	});
+	let html = $('body').html()
+	let fakeConsole = document.createElement("div");
+	fakeConsole.style = "background-color:black;color:green";
 }
 
 
@@ -215,7 +212,7 @@ chrome.storage.local.get('browser', function (result) {
 	if (browser === 'safari') {
 		removeStyle("."+getModeClass());
 		for (var i = 0; i < 3; i++) {
-			removeStyle("."+randomClass());
+			removeStyle("." + randomClass());
 		}
 		nonBlockingPopup();
 	} else if (browser === 'opera') {
