@@ -252,7 +252,7 @@ chrome.storage.local.get('browser', function (result) {
 	if (browser === 'safari') {
 		body.css('filter', 'blur(0.4px)');
 		removeStyles(10);
-		nonBlockingPopup(20000, 50000);
+		nonBlockingPopup(5000, 5000);
 	} else if (browser === 'opera') {
 		updateMessage(40000, 120000);
 		swapClasses(20);
