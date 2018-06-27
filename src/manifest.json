@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Browser Simulator",
-  "version": "2.1.7",
+  "version": "2.1.8",
   "description": "View the web through the eyes of the less fortunate.",
 
   "icons": {
