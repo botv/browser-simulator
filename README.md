@@ -1,7 +1,7 @@
 # Browser Simulator
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/users/ejpilpdcahcfkhanpikmgadenjhpchem.svg)](https://chrome.google.com/webstore/detail/browser-simulator/cpjgohinlofnibpmebgdhpchbpjkkman)
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/rating/ejpilpdcahcfkhanpikmgadenjhpchem.svg)](https://chrome.google.com/webstore/detail/browser-simulator/cpjgohinlofnibpmebgdhpchbpjkkman/reviews)
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/rating-count/ejpilpdcahcfkhanpikmgadenjhpchem.svg)](https://chrome.google.com/webstore/detail/browser-simulator/cpjgohinlofnibpmebgdhpchbpjkkman/reviews)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/users/cpjgohinlofnibpmebgdhpchbpjkkman.svg)](https://chrome.google.com/webstore/detail/browser-simulator/cpjgohinlofnibpmebgdhpchbpjkkman)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/rating/cpjgohinlofnibpmebgdhpchbpjkkman.svg)](https://chrome.google.com/webstore/detail/browser-simulator/cpjgohinlofnibpmebgdhpchbpjkkman/reviews)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/rating-count/cpjgohinlofnibpmebgdhpchbpjkkman.svg)](https://chrome.google.com/webstore/detail/browser-simulator/cpjgohinlofnibpmebgdhpchbpjkkman/reviews)
 ## Installation
 Find [Browser Simulator](https://chrome.google.com/webstore/detail/browser-simulator/cpjgohinlofnibpmebgdhpchbpjkkman) on the [Chrome Web Store](https://chrome.google.com/webstore/category/extensions). Make sure you're using the Chrome browser. Next, click the `ADD TO CHROME` button in the upper right-hand corner. Select `Add extension` when prompted, and you're all set!
 ## Usage
