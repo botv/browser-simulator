@@ -1,4 +1,4 @@
-# ![alt text](https://github.com/botvinick/browser-simulator/blob/master/src/assets/icons/icon.png?raw=true =25x "Browser Simulator") Browser Simulator
+# ![Browser Simulator](https://github.com/botvinick/browser-simulator/blob/master/src/assets/icons/icon.png?raw=true =25x) Browser Simulator
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/users/ejpilpdcahcfkhanpikmgadenjhpchem.svg)](https://chrome.google.com/webstore/detail/browser-simulator/cpjgohinlofnibpmebgdhpchbpjkkman)
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/rating/ejpilpdcahcfkhanpikmgadenjhpchem.svg)](https://chrome.google.com/webstore/detail/browser-simulator/cpjgohinlofnibpmebgdhpchbpjkkman/reviews)
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/rating-count/ejpilpdcahcfkhanpikmgadenjhpchem.svg)](https://chrome.google.com/webstore/detail/browser-simulator/cpjgohinlofnibpmebgdhpchbpjkkman/reviews)
